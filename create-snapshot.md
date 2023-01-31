@@ -52,3 +52,25 @@ service nginx restart
 http://your_domain/snapshot/planq/ 
 ```
 ![image](https://user-images.githubusercontent.com/16186519/215654319-5c840516-6b64-4f55-aec3-55be8afa21e5.png)
+
+# Create cronjob for daily snapshot
+
+### Creating .sh file
+```
+sudo tee $HOME/cron.sh > /dev/null << 'EOF'
+sudo systemctl stop planqd
+cd $HOME/.planqd/
+rm /var/www/html/snapshot/planq/*
+tar -cf - data | lz4 > /var/www/html/snapshot/planq/planq-snapshot-$(date +%Y%m%d).tar.lz4
+sudo systemctl start planqd
+EOF
+chmod +x $HOME/cron.sh
+```
+
+### Creating Daily Cronjob
+```
+crontab -l > cronjob
+echo "0 0 * * * root/cron.sh >/dev/null 2>&1" >> cronjob
+crontab cronjob
+rm cronjob
+```
