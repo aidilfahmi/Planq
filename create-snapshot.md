@@ -21,7 +21,7 @@ mkdir -p /var/www/html/snapshot/planq/
 sudo apt install lz4
 cd $HOME/.planqd
 sudo systemctl stop planqd
-tar -cf - data | lz4 > mkdir -p /var/www/html/snapshot/planq/planq-snapshot-$(date +%Y%m%d).tar.lz4
+tar -cf - data | lz4 > /var/www/html/snapshot/planq/planq-snapshot-$(date +%Y%m%d).tar.lz4
 sudo systemctl start planqd
 ```
 
