@@ -1,4 +1,4 @@
-## How To Install Full Node Planq Mainnet
+## Planq Mainnet Setup
 
 
 ### Update packages
@@ -45,10 +45,9 @@ planqd config chain-id planq_7070-2
 planqd init YOUR_MONIKER --chain-id planq_7070-2
 ```
 
-### Download configuration
+### Download Genesis
 ```
 wget -qO $HOME/.planqd/config/genesis.json "https://raw.githubusercontent.com/planq-network/networks/main/mainnet/genesis.json"
-wget -O $HOME/.planqd/config/addrbook.json "https://raw.githubusercontent.com/konsortech/Node/main/Mainnet/Planq/addrbook.json"
 ```
 
 ## Set seeds and peers
