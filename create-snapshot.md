@@ -55,8 +55,16 @@ http://your_domain/snapshot/planq/
 
 # Create cronjob for daily snapshot
 
+### Installation and Configure Crontab
+```
+sudo apt-get install cron
+sudo systemctl enable cron
+sudo systemctl start cron
+```
+
 ### Creating .sh file
 ```
+rm $HOME/cron.sh
 sudo tee $HOME/cron.sh > /dev/null << 'EOF'
 sudo systemctl stop planqd
 cd $HOME/.planqd/
@@ -70,7 +78,16 @@ chmod +x $HOME/cron.sh
 ### Creating Daily Cronjob
 ```
 crontab -l > cronjob
-echo "0 0 * * * root/cron.sh >/dev/null 2>&1" >> cronjob
+echo "0 0 * * * /root/cron.sh" >> cronjob
 crontab cronjob
 rm cronjob
 ```
+### check your crontab list
+```
+crontab -l
+```
+should be like this
+
+![image](https://user-images.githubusercontent.com/16186519/215921974-009e6d20-0c45-41e9-a6a1-b0282a436b18.png)
+
+
