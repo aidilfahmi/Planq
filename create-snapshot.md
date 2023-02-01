@@ -63,6 +63,7 @@ sudo systemctl start cron
 ```
 
 ### Creating .sh file
+My snapshot folder at `/var/www/html/snapshot/planq/`, you must replace with your own working folder to save planq snapshot
 ```
 rm $HOME/cron.sh
 sudo tee $HOME/cron.sh > /dev/null << 'EOF'
@@ -82,7 +83,7 @@ echo "0 0 * * * /root/cron.sh" >> cronjob
 crontab cronjob
 rm cronjob
 ```
-### check your crontab list
+### Check your crontab list
 ```
 crontab -l
 ```
