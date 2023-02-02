@@ -2,7 +2,7 @@
 
 
 ## Prepare : 
-Make sure you already have your domain and create some sub domain, here is my domain list:
+Make sure you already have your domain and create some sub-domain, here is my domain list:
 
 > Domain : dnsarz.xyz <p>
 >Subdomain: <br>
@@ -63,11 +63,11 @@ sudo apt-get update && sudo apt-get install yarn -y
 
 
 ## NGINX Configuration
-> After create some subdomain, no we have to create nginx configuration for each subdomain. <br>
+> After create some subdomain, now you have to create nginx configuration for each sub-domain. <br>
 All NGINX configuration can be found and create at `/etc/nginx/sites-enabled/` folder
 
 ### Create API Config
-create new config file for api.planq.dnsarz.xyz subdomain
+create new config file for api.planq.dnsarz.xyz sub-domain
 ```
 nano /etc/nginx/sites-enabled/api.planq.dnsarz.xyz.conf
 ```
@@ -92,7 +92,7 @@ server {
 ```
 `ctrl + X + Y `to save it
 ### Create RPC Config
-create new config file for rpc.planq.dnsarz.xyz subdomain
+create new config file for rpc.planq.dnsarz.xyz sub-domain
 ```
 nano /etc/nginx/sites-enabled/rpc.planq.dnsarz.xyz.conf
 ```
@@ -150,12 +150,12 @@ systemctl restart nginx
 ```
   
 ## Checking your API and RPC
-Open your browser and check your API sub domain
+Open your browser and check your API sub-domain
 > https://api.planq.dnsarz.xyz
   
 ![image](https://user-images.githubusercontent.com/16186519/215946801-17929a44-0f03-40bc-b80f-a996bf66e235.png)
 
-Open your browser and check your RPC sub domain
+Open your browser and check your RPC sub-domain
 > https://rpc.planq.dnsarz.xyz
 
 ![image](https://user-images.githubusercontent.com/16186519/215947098-0c58247b-d879-421c-90ce-172acdaa687d.png)
