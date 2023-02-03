@@ -257,19 +257,29 @@ Withdraw rewards with commision
 planqd tx distribution withdraw-rewards <planq valoper> --from=wallet --commission --chain-id=planq_7070-2
 ```
 
-### Validator management
-Edit validator
-```
-planqd tx staking edit-validator \
-  --moniker=YOUR_MONIKER \
-  --identity=<your_keybase_id> \
-  --website="<your_website>" \
-  --details="<your_validator_description>" \
-  --chain-id=planq_7070-2 \
-  --from=wallet
-```
+## Validator management
+### Edit validator
 
-Unjail validator
+Syntax :
+
+> planqd tx staking edit-validator `commands` --gas="1000000" --gas-adjustment="1.15" --gas-prices="30000000000aplanq" --chain-id planq_7070-2 --from wallet_name <br>
+
+Replace command with these Available commands: <br>
+
+> --commission-rate=<your_new_commission_rate> <br>
+--details=<your_validator_description> <br>
+--identity=<your_keybase_id> <br>
+--min-self-delegation=<your_new_minimum_self_delegation> <br>
+--new-moniker=<your_new_moniker_name> <br>
+--website=<your_website> <br>
+--security-contact=<your_security_contact> <br>
+>
+Example:<br>
+If you want to change Identity, you can use this command:
+```
+planqd tx staking edit-validator --identity=<your_keybase_id>  --gas="1000000" --gas-adjustment="1.15" --gas-prices="30000000000aplanq" --chain-id planq_7070-2 --from your_wallet_name
+```
+### Unjail validator
 ```
 planqd tx slashing unjail \
   --broadcast-mode=block \
