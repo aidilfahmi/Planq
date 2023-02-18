@@ -239,12 +239,13 @@ planqd tx gov vote 1 yes --from wallet --chain-id=planq_7070-2
 ### Staking, Delegation and Rewards
 Delegate stake
 ```
-planqd tx staking delegate <planq valoper> 10000000aplanq --from=wallet --chain-id=planq_7070-2 --gas=auto
+planqd tx staking delegate $(planqd keys show <wallet_name> --bech val -a) <AMOUNT>aplanq --gas="1000000" --gas-prices="30000000000aplanq" --gas-adjustment="1.15" --chain-id=planq_7070-2 --from <wallet_name>
+
 ```
 
 Redelegate stake from validator to another validator
 ```
-planqd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 10000000aplanq --from=wallet --chain-id=planq_7070-2 --gas=auto
+planqd tx staking redelegate <Your_validator_address> <Destination_Validator_Address> <AMOUNT>aplanq --gas="1000000" --gas-prices="30000000000aplanq" --gas-adjustment="1.15" --chain-id planq_7070-2 --from <wallet_name>
 ```
 
 Withdraw all rewards
