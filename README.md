@@ -282,10 +282,12 @@ planqd tx staking edit-validator --identity=<your_keybase_id>  --gas="1000000" -
 ### Unjail validator
 ```
 planqd tx slashing unjail \
-  --broadcast-mode=block \
-  --from=wallet \
   --chain-id=planq_7070-2 \
-  --gas=auto
+  --gas="1000000" \
+  --gas-adjustment="1.15" \
+  --gas-prices="30000000000aplanq" \
+  --from=wallet 
+
 ```
 
 ### Delete node
