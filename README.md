@@ -249,12 +249,12 @@ planqd tx staking redelegate <srcValidatorAddress> <destValidatorAddress> 100000
 
 Withdraw all rewards
 ```
-planqd tx distribution withdraw-all-rewards --from=wallet --chain-id=planq_7070-2 --gas=auto
+planqd tx distribution withdraw-all-rewards --gas="1000000" --gas-adjustment="1.15" --gas-prices="30000000000aplanq" --chain-id planq_7070-2 --from <wallet_name>
 ```
 
 Withdraw rewards with commision
 ```
-planqd tx distribution withdraw-rewards <planq valoper> --from=wallet --commission --chain-id=planq_7070-2
+planqd tx distribution withdraw-rewards $(planqd keys show <wallet_name> --bech val -a) --commission --gas="1000000" --gas-adjustment="1.15" --gas-prices="30000000000aplanq" --chain-id planq_7070-2 --from <wallet_name>
 ```
 
 ## Validator management
