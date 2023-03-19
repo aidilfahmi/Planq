@@ -109,6 +109,12 @@ Here's my configuration for example
 cd $HOME/explorer
 yarn && yarn build
 ```
+if you have an error when build like this ``yarn The engine "node" is incompatible with this module``, use this command
+```
+yarn install --ignore-engines
+cd $HOME/explorer
+yarn && yarn build
+```
 ### Copy web file to Nginx html folder
 ```
 cp -r $HOME/explorer/dist/* /usr/share/nginx/html
