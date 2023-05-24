@@ -78,7 +78,7 @@ git clone https://github.com/ping-pub/explorer
 
 ### Create or edit your config file
 ```
-nano $HOME/explorer/src/chains/mainnet/planq.json
+nano $HOME/explorer/chains/mainnet/planq.json
 ```
 
 Here's my configuration for example
