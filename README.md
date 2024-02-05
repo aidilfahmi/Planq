@@ -1,4 +1,4 @@
-# Planq Mainnet Setup
+### Planq Mainnet Setup
 
 ## Minimum Requirements 
 - 4 or more physical CPU cores
